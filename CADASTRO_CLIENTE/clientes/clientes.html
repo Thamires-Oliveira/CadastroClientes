@@ -1,0 +1,119 @@
+<html>
+	<head>
+	<meta charset="UTF-8">
+		<title>CADASTRO DE CLIENTES</title>
+		
+			<style>
+		margin:50px auto;
+		text-align:center;
+		font-family:"courier","serif";
+		color:#f1fc20;}
+		#botoes a {text-decoration:none;}		
+		</style>
+	<link rel ="stylesheet"
+			type="text/css"
+			href="../estilos.css">
+			
+		<script type="text/javascript">
+        function mascara1(telefone1){ 
+            if(telefone1.value.length == 0)
+                telefone1.value = '(' + telefone1.value; //quando começamos a digitar, o script irá inserir um parênteses no começo do campo.
+            if(telefone1.value.length == 3)
+                telefone1.value = telefone1.value + ') '; //quando o campo já tiver 3 caracteres (um parênteses e 2 números) o script irá inserir mais um parênteses, fechando assim o código de área.
+ 
+            if(telefone1.value.length == 9)
+                telefone1.value = telefone1.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do telefone.
+		}
+		
+		function mascara2(telefone2){ 
+            if(telefone2.value.length == 0)
+                telefone2.value = '(' + telefone2.value; //quando começamos a digitar, o script irá inserir um parênteses no começo do campo.
+            if(telefone2.value.length == 3)
+                telefone2.value = telefone2.value + ') '; //quando o campo já tiver 3 caracteres (um parênteses e 2 números) o script irá inserir mais um parênteses, fechando assim o código de área.
+            if(telefone2.value.length == 9)
+                telefone2.value = telefone2.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do telefone.
+		}
+		
+		function mascara3(telefone3){ 
+				if(telefone3.value.length == 0)
+					telefone3.value = '(' + telefone3.value; //quando começamos a digitar, o script irá inserir um parênteses no começo do campo.
+				if(telefone3.value.length == 3)
+					telefone3.value = telefone3.value + ') '; //quando o campo já tiver 3 caracteres (um parênteses e 2 números) o script irá inserir mais um parênteses, fechando assim o código de área.
+				if(telefone3.value.length == 9)
+					telefone3.value = telefone3.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do telefone.
+			}
+	
+		function mascara4(celular1){ 
+				if(celular1.value.length == 0)
+					celular1.value = '(' + celular1.value; //quando começamos a digitar, o script irá inserir um parênteses no começo do campo.
+				if(celular1.value.length == 3)
+					celular1.value = celular1.value + ') '; //quando o campo já tiver 3 caracteres (um parênteses e 2 números) o script irá inserir mais um parênteses, fechando assim o código de área.
+				if(celular1.value.length == 10)
+					celular1.value = celular1.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do telefone.
+			}
+	
+		function mascara5(celular2){ 
+				if(celular2.value.length == 0)
+					celular2.value = '(' + celular2.value; //quando começamos a digitar, o script irá inserir um parênteses no começo do campo.
+				if(celular2.value.length == 3)
+					celular2.value = celular2.value + ') '; //quando o campo já tiver 3 caracteres (um parênteses e 2 números) o script irá inserir mais um parênteses, fechando assim o código de área.
+				if(celular2.value.length == 10)
+					celular2.value = celular2.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do telefone.
+			}
+		
+		function mascara6(cnpj){  
+            if(cnpj.value.length == 2)
+					cnpj.value = cnpj.value + '.';
+			if(cnpj.value.length == 6)
+			cnpj.value = cnpj.value + '.';
+			if(cnpj.value.length == 10)
+			cnpj.value = cnpj.value + '/';
+			if(cnpj.value.length == 15)
+			cnpj.value = cnpj.value + '-';
+			
+			}
+    </script>
+	
+			</head>
+	<body id="body_cadastro">
+		<div id="home"> 
+			<a href="../index.html" class="home">
+				<img src="icones/home-interface.png" width="20" height="20">
+				&nbsp;HOME
+			</a>
+		</div> 
+		
+			<h1 class="titulo">CLIENTE</h1>
+		<form action="cliente.php" enctype="multipart/form-data" method="POST">
+		
+		<fieldset>
+			<legend><b>Dados da Empresa</b></legend>
+			<div id="dados">
+			Cnpj:&nbsp <input type="text=" class="cnpj" name="cnpj" size="20" maxlength="20" onkeypress="mascara6(this)"><br>
+		Nome:&nbsp <input type="text" class="nome" name="nome" size="30" maxlength="30"><br>
+		Razão Social:&nbsp <input type="text" class="razaoSocial" name="razaoSocial" size="50" maxlength="50"><br>
+		Cidade:&nbsp <input type="text" class="cidade" name="cidade" size="30" maxlength="30">
+		&nbsp &nbsp &nbsp UF:&nbsp <input type="text" name="uf" size="2" maxlength="2"><br>
+		Telefone 1:&nbsp <input type="text" name="telefone1" size="15" maxlength="15" placeholder="    (11) 0000-0000" class="telefone" onkeypress="mascara1(this)">
+		&nbsp &nbsp Telefone 2:&nbsp <input type="text" name="telefone2" size="15" maxlength="15" placeholder="    (11) 0000-0000" class="telefone" onkeypress="mascara2(this)">
+		&nbsp &nbsp Telefone 3:&nbsp <input type="text" name="telefone3" size="15" maxlength="15" placeholder="    (11) 0000-0000" class="telefone" onkeypress="mascara3(this)">
+		<p>Celular 1:&nbsp <input type="text" name="celular1" size="15" maxlength="15" placeholder="    (11) 00000-0000" class="celular" onkeypress="mascara4(this)">
+		&nbsp  Whatsapp <input type="checkbox" name="whatsapp1" class="checkbox_celular1" value="1"></p>
+	<p>|&nbsp Celular 2:&nbsp <input type="text" name="celular2" size="15" maxlength="15" placeholder="    (11) 00000-0000" class="celular" onkeypress="mascara5(this)">
+		&nbsp Whatsapp <input type="checkbox" name="whatsapp2" class="checkbox_celular2" value="1" ></p><br>
+		E-mail:&nbsp <input type="text" name="email" size="35" maxlength="35" placeholder="      aaaaa@aaaaa.com.br"><br><br>
+		
+		
+		OBS:<br>
+		<textarea name="obs" rows="6" cols="93" placeholder="Insira aqui informações adicionais sobre o cliente."></textarea>
+	</div>	
+		</fieldset>
+		<div id ="botoes">
+		<input type="submit" value="Cadastrar" class="butn"> &nbsp
+		<input type="reset" value="Limpar" class="butn"> &nbsp
+		<a href="lista.php"><input type="button" class="butn" value="Lista de Cadastros"></a>
+		</div> 
+		</form>
+	<body>
+
+</html>
